@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">JLGTracker</string>
     <string name="jlg_tracker">JLG Tracker</string>
+    <string name="continue_msg">Continue</string>
 </resources>
