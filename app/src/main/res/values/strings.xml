@@ -2,4 +2,10 @@
     <string name="app_name">JLGTracker</string>
     <string name="jlg_tracker">JLG Tracker</string>
     <string name="continue_msg">Continue</string>
+    <string name="url_where_to_send_geoloc">URL where to send geoloc</string>
+    <string name="http_localhost_3000_api_geoloc">http://localhost:3000/api/geoloc</string>
+    <string name="delay_in_second">Delay in second</string>
+    <string name="delayInSecond">5</string>
+    <string name="make_a_sound_when_sending_geoloc">Make a sound when sending geoloc</string>
+    <string name="start_sending_geoloc">Start sending geoloc</string>
 </resources>
