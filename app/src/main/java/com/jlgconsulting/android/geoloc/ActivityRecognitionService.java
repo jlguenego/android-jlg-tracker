@@ -1,8 +1,11 @@
 package com.jlgconsulting.android.geoloc;
 
+import static android.app.PendingIntent.FLAG_MUTABLE;
+
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.util.Log;
 
 import com.google.android.gms.location.ActivityRecognition;
@@ -29,10 +32,15 @@ public class ActivityRecognitionService {
 
     public void start() {
         try {
+            Log.d(TAG, "starting activity recognition service");
             Intent intent = new Intent(TRANSITIONS_RECEIVER_ACTION);
             intent.setClass(context, GeolocForegroundService.class);
-            pendingIntent = PendingIntent.getForegroundService(context, 0, intent, 0);
-
+            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                pendingIntent = PendingIntent.getForegroundService(context, 0, intent, FLAG_MUTABLE);
+            } else {
+                pendingIntent = PendingIntent.getForegroundService(context, 0, intent, 0);
+            }
+            Log.d(TAG, "pending intent created.");
             Task<Void> task =
                     ActivityRecognition.getClient(context)
                             .requestActivityUpdates(5000, pendingIntent);

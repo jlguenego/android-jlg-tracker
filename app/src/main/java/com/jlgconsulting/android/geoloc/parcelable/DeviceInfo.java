@@ -7,7 +7,6 @@ import java.util.List;
 
 public class DeviceInfo implements Parcelable {
     public String deviceName;
-    public List<String> imeiList;
     public String model;
     public String display;
     public String uniqueId;
@@ -15,15 +14,12 @@ public class DeviceInfo implements Parcelable {
     public String systemVersion;
     public String deviceId;
     public String readableVersion;
-    public String macAddress;
-    public String serialNumber;
     public String manufacturer;
 
     public DeviceInfo() {}
 
     protected DeviceInfo(Parcel in) {
         deviceName = in.readString();
-        imeiList = in.createStringArrayList();
         model = in.readString();
         display = in.readString();
         uniqueId = in.readString();
@@ -31,15 +27,12 @@ public class DeviceInfo implements Parcelable {
         systemVersion = in.readString();
         deviceId = in.readString();
         readableVersion = in.readString();
-        macAddress = in.readString();
-        serialNumber = in.readString();
         manufacturer = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(deviceName);
-        dest.writeStringList(imeiList);
         dest.writeString(model);
         dest.writeString(display);
         dest.writeString(uniqueId);
@@ -47,8 +40,6 @@ public class DeviceInfo implements Parcelable {
         dest.writeString(systemVersion);
         dest.writeString(deviceId);
         dest.writeString(readableVersion);
-        dest.writeString(macAddress);
-        dest.writeString(serialNumber);
         dest.writeString(manufacturer);
     }
 

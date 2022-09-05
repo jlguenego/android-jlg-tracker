@@ -66,7 +66,6 @@ public class JSONUtils {
 
         JSONObject deviceInfoJson = new JSONObject();
         deviceInfoJson.put("deviceName", deviceInfo.deviceName);
-        deviceInfoJson.put("imeiList", new JSONArray(deviceInfo.imeiList));
         deviceInfoJson.put("model", deviceInfo.model);
         deviceInfoJson.put("display", deviceInfo.display);
         deviceInfoJson.put("uniqueId", deviceInfo.uniqueId);
@@ -74,8 +73,6 @@ public class JSONUtils {
         deviceInfoJson.put("systemVersion", deviceInfo.systemVersion);
         deviceInfoJson.put("deviceId", deviceInfo.deviceId);
         deviceInfoJson.put("readableVersion", deviceInfo.readableVersion);
-        deviceInfoJson.put("macAddress", deviceInfo.macAddress);
-        deviceInfoJson.put("serialNumber", deviceInfo.serialNumber);
         deviceInfoJson.put("manufacturer", deviceInfo.manufacturer);
         geolocJson.put("deviceInfo", deviceInfoJson);
 
