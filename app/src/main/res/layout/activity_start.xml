@@ -80,9 +80,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/switchSound"
-        android:layout_marginTop="64dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="64dp"
+        android:onClick="onStartClick"
         android:text="@string/start_sending_geoloc" />
 
 
