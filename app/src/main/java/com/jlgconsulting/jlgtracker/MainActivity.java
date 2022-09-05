@@ -2,12 +2,14 @@ package com.jlgconsulting.jlgtracker;
 
 import static android.text.Html.FROM_HTML_MODE_COMPACT;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,8 +40,20 @@ public class MainActivity extends AppCompatActivity {
 
         pr.askForBattery((result) -> {
             Log.d(TAG, "ask for battery result: " + result);
-            Intent intent = new Intent(this, StartActivity.class);
-            startActivity(intent);
+            if (result.getResultCode() != Activity.RESULT_OK) {
+                Toast.makeText(getApplicationContext(),"I need battery optimization set to unrestricted.",Toast.LENGTH_LONG).show();
+                return;
+            }
+            pr.askForPermissions((permissionResult) -> {
+                Log.d(TAG, "ask for permissions: " + permissionResult);
+                if (permissionResult.containsValue(false)) {
+                    Toast.makeText(getApplicationContext(),"I need all permissions set to unrestricted.",Toast.LENGTH_LONG).show();
+                    return;
+                }
+                Intent intent = new Intent(this, StartActivity.class);
+                startActivity(intent);
+            });
+
         });
 
     }
