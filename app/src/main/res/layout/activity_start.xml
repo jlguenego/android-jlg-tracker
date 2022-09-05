@@ -1,90 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".StartActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/jlg_tracker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/jlg_tracker"
         tools:ignore="ImageContrastCheck" />
 
-    <TextView
-        android:id="@+id/textViewUrlLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_marginTop="32dp"
-        android:text="@string/url_where_to_send_geoloc"
-        android:labelFor="@id/editTextUrl"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="406dp"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-    <EditText
-        android:id="@+id/editTextUrl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewUrlLabel"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="textUri"
-        android:minHeight="48dp"
-        android:text="@string/http_localhost_3000_api_geoloc" />
+        <TextView
+            android:id="@+id/textViewUrlLabel"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginTop="32dp"
+            android:labelFor="@id/editTextUrl"
+            android:text="@string/url_where_to_send_geoloc" />
 
-    <TextView
-        android:id="@+id/textViewDelayLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextUrl"
-        android:layout_marginTop="32dp"
-        android:text="@string/delay_in_second"
-        android:labelFor="@id/editTextDelay"
-        />
+        <EditText
+            android:id="@+id/editTextUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="textUri"
+            android:minHeight="48dp"
+            android:text="@string/http_localhost_3000_api_geoloc" />
 
-    <EditText
-        android:id="@+id/editTextDelay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewDelayLabel"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="number"
-        android:minHeight="48dp"
-        android:text="@string/delayInSecond"
-        />
+        <TextView
+            android:id="@+id/textViewDelayLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:labelFor="@id/editTextDelay"
+            android:text="@string/delay_in_second" />
 
-    <Switch
-        android:id="@+id/switchSound"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextDelay"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="32dp"
-        android:minHeight="48dp"
-        android:text="@string/make_a_sound_when_sending_geoloc"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+        <EditText
+            android:id="@+id/editTextDelay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:text="@string/delayInSecond" />
+
+        <Switch
+            android:id="@+id/switchSound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:minHeight="48dp"
+            android:text="@string/make_a_sound_when_sending_geoloc"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+    </LinearLayout>
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonStart"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/switchSound"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="64dp"
+        android:layout_marginBottom="32dp"
         android:onClick="onStartClick"
-        android:text="@string/start_sending_geoloc" />
+        android:text="@string/start_sending_geoloc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</RelativeLayout>
+
+
+
+
+
+
+
+

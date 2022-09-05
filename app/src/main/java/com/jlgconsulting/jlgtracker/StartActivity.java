@@ -1,5 +1,6 @@
 package com.jlgconsulting.jlgtracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,5 +17,7 @@ public class StartActivity extends AppCompatActivity {
 
     public void onStartClick(View view) {
         Log.d("JLGModule", "On Start Click");
+        Intent intent = new Intent(this, StopActivity.class);
+        startActivity(intent);
     }
 }
