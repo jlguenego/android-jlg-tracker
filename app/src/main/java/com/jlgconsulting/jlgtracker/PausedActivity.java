@@ -18,7 +18,7 @@ import com.jlgconsulting.android.geoloc.Config;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public class StartActivity extends AppCompatActivity {
+public class PausedActivity extends AppCompatActivity {
     private static final String TAG = "JLGModule.StartActivity";
 
     EditText editTextUrl;
@@ -34,7 +34,7 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
+        setContentView(R.layout.activity_paused);
 
         editTextUrl = findViewById(R.id.editTextUrl);
         editTextDelay = findViewById(R.id.editTextDelay);

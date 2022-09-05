@@ -30,7 +30,7 @@ public class RunningActivity extends AppCompatActivity {
     public void onStopClick(View view) {
         Log.d("JLGModule", "stop click");
         stopMyService();
-        Intent intent = new Intent(this, StartActivity.class);
+        Intent intent = new Intent(this, PausedActivity.class);
         startActivity(intent);
     }
 

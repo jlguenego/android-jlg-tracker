@@ -30,7 +30,7 @@
             android:name=".RunningActivity"
             android:exported="false" />
         <activity
-            android:name=".StartActivity"
+            android:name=".PausedActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

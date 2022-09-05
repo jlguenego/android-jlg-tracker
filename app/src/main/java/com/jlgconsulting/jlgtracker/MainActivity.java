@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.jlgconsulting.android.geoloc.GeolocForegroundService;
 import com.jlgconsulting.android.geoloc.PermissionRequest;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,8 +51,13 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"I need all permissions set to unrestricted.",Toast.LENGTH_LONG).show();
                     return;
                 }
-                Intent intent = new Intent(this, StartActivity.class);
+
+                Intent intent = GeolocForegroundService.isMyMusicServiceRunning() ?
+                        new Intent(this, RunningActivity.class) :
+                        new Intent(this, PausedActivity.class);
+
                 startActivity(intent);
+
             });
 
         });
