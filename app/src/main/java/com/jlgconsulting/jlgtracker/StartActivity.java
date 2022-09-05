@@ -17,6 +17,8 @@ public class StartActivity extends AppCompatActivity {
 
     public void onStartClick(View view) {
         Log.d("JLGModule", "On Start Click");
+        // start the foreground service
+
         Intent intent = new Intent(this, StopActivity.class);
         startActivity(intent);
     }
