@@ -7,32 +7,40 @@ import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.jlgconsulting.android.geoloc.PermissionRequest;
+
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textView;
-    private Button continueButton;
+    private static final String TAG = "JLGModule.MainActivity";
+
+    PermissionRequest pr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView = findViewById(R.id.textView);
+        TextView textView = findViewById(R.id.textView);
         String htmlText = "<p>This app sends your geoloc to a URL every D seconds.</p>" +
                 "<p>You can configure the URL and the delay D.</p>";
         textView.setText(Html.fromHtml(htmlText, FROM_HTML_MODE_COMPACT));
 
-        continueButton = findViewById(R.id.button);
+        pr = new PermissionRequest(this);
     }
 
     public void gotoNextActivity(View view) {
-        Log.d("JLGModule", "click");
-        Intent intent = new Intent(this, StartActivity.class);
-        startActivity(intent);
+        Log.d(TAG, "click");
+        // first ask for permissions
+
+        pr.askForBattery((result) -> {
+            Log.d(TAG, "ask for battery result: " + result);
+            Intent intent = new Intent(this, StartActivity.class);
+            startActivity(intent);
+        });
+
     }
 }
