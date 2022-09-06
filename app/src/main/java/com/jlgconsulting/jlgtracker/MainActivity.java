@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                Intent intent = GeolocForegroundService.isMyMusicServiceRunning() ?
+                Intent intent = GeolocForegroundService.isMyServiceRunning() ?
                         new Intent(this, RunningActivity.class) :
                         new Intent(this, PausedActivity.class);
 

@@ -196,7 +196,7 @@ public class GeolocForegroundService extends Service {
         debugSound = soundPool.load(context, Config.getInstance().getSound(), 1);
     }
 
-    public static boolean isMyMusicServiceRunning() {
+    public static boolean isMyServiceRunning() {
         return instance != null;
     }
 }
