@@ -31,16 +31,22 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
         <TextView
-            android:id="@+id/textViewJSONLabel"
+            android:id="@+id/textViewJsonLabel"
             android:layout_width="match_parent"
             android:layout_height="29dp"
             android:text="@string/json_sent_to_url" />
 
         <TextView
-            android:id="@+id/textViewJSONContent"
+            android:id="@+id/textViewJsonContent"
             android:layout_width="match_parent"
-            android:layout_height="361dp"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:layout_height="300dp"
+            android:background="@drawable/border"
+            android:padding="8dp"
+            android:fontFamily="monospace"
+            android:textFontWeight="900"
+            android:textSize="12sp"
+            android:maxHeight="300dp"
+            android:scrollbars="vertical"
             android:text="@string/json_default_content" />
     </LinearLayout>
 

@@ -18,7 +18,7 @@ import java.time.format.DateTimeFormatter;
 
 public class JSONUtils {
 
-    public static JSONObject GeolocInfoToJson(GeolocInfo geolocInfo) throws JSONException {
+    public static JSONObject geolocInfoToJson(GeolocInfo geolocInfo) throws JSONException {
 
         DetectedActivity detectedActivity = geolocInfo.detectedActivity;
         LocationResult locationResult = geolocInfo.locationResult;

@@ -90,7 +90,7 @@ public class Api {
 
             locations.add(geolocInfo.locationResult.getLastLocation());
             newGeolocInfo.locationResult = LocationResult.create(locations);
-            JSONObject geolocJson = JSONUtils.GeolocInfoToJson(newGeolocInfo);
+            JSONObject geolocJson = JSONUtils.geolocInfoToJson(newGeolocInfo);
 
             String json = geolocJson.toString();
 
