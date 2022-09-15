@@ -23,7 +23,7 @@ import java.util.Map;
 public class PermissionRequest {
     final private static String TAG = "JLGModule.PermissionRequest";
     final private static String[] PERMISSIONS = {
-            Manifest.permission.READ_PHONE_STATE,
+//            Manifest.permission.READ_PHONE_STATE,
             Manifest.permission.ACCESS_FINE_LOCATION,
     };
 
