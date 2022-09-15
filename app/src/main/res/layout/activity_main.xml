@@ -19,15 +19,13 @@
         app:srcCompat="@drawable/jlg_tracker"
         tools:ignore="ImageContrastCheck" />
 
-    <TextView
-        android:id="@+id/textView"
+    <WebView
+        android:id="@+id/webView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text=""
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -36,10 +34,10 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+        android:layout_marginTop="32dp"
         android:onClick="gotoNextActivity"
         android:text="@string/continue_msg"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/webView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
