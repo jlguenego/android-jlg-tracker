@@ -4,13 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/android/JLGTracker/app/src/main/res/layout/activity_main.xml" value="0.2546875" />
+        <entry key="..\:/android/JLGTracker/app/src/main/res/layout/activity_paused.xml" value="0.240625" />
         <entry key="..\:/android/JLGTracker/app/src/main/res/layout/activity_running.xml" value="0.23645833333333333" />
         <entry key="..\:/android/JLGTracker/app/src/main/res/layout/activity_start.xml" value="0.3" />
         <entry key="..\:/android/JLGTracker/app/src/main/res/layout/activity_stop.xml" value="0.2546875" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
